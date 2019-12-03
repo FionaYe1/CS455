@@ -1,0 +1,3 @@
+/Users/ProAlex/Desktop/CppPa/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/ProAlex/Desktop/CppPa/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/ProAlex/Desktop/CppPa/cmake-build-debug/CMakeFiles/Lab13.dir
