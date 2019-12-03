@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="startercode_0_12"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/ProAlex/Downloads/startercode.0 12/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/ProAlex/Downloads/startercode.0 12/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/ProAlex/Downloads/startercode.0 12/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="startercode_0_12">
+				<Option output="/Users/ProAlex/Downloads/startercode.0 12/cmake-build-debug/startercode_0_12" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ProAlex/Downloads/startercode.0 12/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/ProAlex/Downloads/startercode.0 12/."/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 startercode_0_12"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="startercode_0_12/fast">
+				<Option output="/Users/ProAlex/Downloads/startercode.0 12/cmake-build-debug/startercode_0_12" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ProAlex/Downloads/startercode.0 12/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/ProAlex/Downloads/startercode.0 12/."/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 startercode_0_12/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ProAlex/Downloads/startercode.0\ 12/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/Makefile">
+			<Option target="startercode_0_12"/>
+		</Unit>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/README">
+			<Option target="startercode_0_12"/>
+		</Unit>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/Table.cpp">
+			<Option target="startercode_0_12"/>
+		</Unit>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/Table.h">
+			<Option target="startercode_0_12"/>
+		</Unit>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/concord.cpp">
+			<Option target="startercode_0_12"/>
+		</Unit>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/grades.cpp">
+			<Option target="startercode_0_12"/>
+		</Unit>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/listFuncs.cpp">
+			<Option target="startercode_0_12"/>
+		</Unit>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/listFuncs.h">
+			<Option target="startercode_0_12"/>
+		</Unit>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/melville.txt">
+			<Option target="startercode_0_12"/>
+		</Unit>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/pa5list.cpp">
+			<Option target="startercode_0_12"/>
+		</Unit>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/poe.txt">
+			<Option target="startercode_0_12"/>
+		</Unit>
+		<Unit filename="/Users/ProAlex/Downloads/startercode.0 12/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
