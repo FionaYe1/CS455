@@ -100,8 +100,9 @@ class Table {
 
   ListType *hashTable;
 
-  int Table::numBucket();
+  int numBucket() const;
 
+  int longestChain() const;
 };
 
 #endif

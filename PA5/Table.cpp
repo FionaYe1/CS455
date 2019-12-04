@@ -49,7 +49,7 @@ bool Table::remove(const string &key) {
 }
 
 bool Table::insert(const string &key, int value) {
-   if（this->lookup(key))
+   if (this->lookup(key))
    {
       return false;
    }
@@ -74,12 +74,11 @@ void Table::printAll() const {
 }
 
 
-
 void Table::hashStats(ostream &out) const {
-   cout << "number of buckets: " << hashSize;
-   cout << "number of entries: " << numEntries;
-   cout << "number of non-empty buckets: " << ;
-   cout << "longest chain: " << ;
+   cout << "number of buckets: " << hashSize << endl;
+   cout << "number of entries: " << numEntries() << endl;
+   cout << "number of non-empty buckets: " << numBucket() << endl;
+   cout << "longest chain: " << longestChain() << endl;
 }
 
 
@@ -97,3 +96,21 @@ int Table::numBucket() const
    return num;
 }
 
+int Table::longestChain() const
+{
+   int max = 0;
+   int num = 0;
+   for (int i = 0; i < hashSize; i++)
+   {
+      if (max < listLength(hashTable[i])) 
+      {
+         max = listLength(hashTable[i]);
+         num = 1;
+      }
+      else if (max == listLength(hashTable[i]))
+      {
+         num++;
+      }
+   }
+   return num;
+}

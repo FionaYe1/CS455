@@ -1,7 +1,7 @@
-// Name: Shuna Ye
-// USC NetID: 2418710997
-// CSCI 455 PA5
-// Fall 2019
+// Name:
+// USC NetID:
+// CS 455 PA5
+// Spring 2019
 
 // pa5list.cpp
 // a program to test the linked list code necessary for a hash table chain
@@ -23,11 +23,32 @@ using namespace std;
 
 #include "listFuncs.h"
 
+int main()
+{
+   ListType head = NULL;
+   listPrint(head);
 
-int main() {
+   listInsert(head, "123", 111);
+   listInsert(head, "123", 222);
+   listInsert(head, "123", 333);
+   listPrint(head);
 
+   cout << listRemove(head, "123") << endl;
+   listPrint(head);
+   listInsert(head, "123", 1);
+   listInsert(head, "12", 2);
+   listInsert(head, "1", 3);
+   listPrint(head);
 
+   listInsert(head, "123", 1);
+   listInsert(head, "12", 2);
+   listInsert(head, "1", 3);
+   listInsert(head, "0", 4);
+   listPrint(head);
+   cout << *listLookup(head, "1") << endl;
+   // cout << find(head, "123") << endl;
 
+   listPrint(head);
 
    return 0;
 }

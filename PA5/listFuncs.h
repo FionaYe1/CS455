@@ -36,14 +36,22 @@ typedef Node * ListType;
 //that operate on a list here (i.e., each includes a parameter of type
 //ListType or ListType&).  No function definitions go in this file.
 
+// insert a new pair into the list
+// return false iff this key was already present(and no change made to list)
 bool listInsert(ListType &list, std::string theKey, int theValue);
 
+// remove a pair given its key
+// false iff key wasn't present
 bool listRemove(ListType &list, std::string target);
 
 void listPrint(ListType &list);
 
 void listClear(ListType &list);
 
+// returns the address of the value that goes with this key
+// or NULL if key is not present.
+//   Thus, this method can be used to either lookup the value or
+//   update the value that goes with this key.
 int *listLookup(ListType &list, std::string target);
 
 int listLength(ListType list);

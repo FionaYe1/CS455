@@ -67,28 +67,14 @@ bool listRemove(ListType &list, string target)
 
 void listPrint(ListType &list)
 {
-   if (list == NULL)
-   {
-      cout << "<empty>" << endl;
-   }
    ListType p = list;
    while (p != NULL)
    {
-      cout << p->key << " " << p->value << endl;
+      cout << p->key << ": " << p->value << endl;
       p = p->next;
    }
 }
 
-void listClear(ListType &list)
-{
-   ListType rest = list;
-   while(list != NULL)
-   {
-      rest = list->next;
-      delete list;
-      list = rest;
-   }
-}
 
 int *listLookup(ListType &list, string target)
 {
