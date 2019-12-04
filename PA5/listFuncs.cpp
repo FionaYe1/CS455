@@ -39,7 +39,7 @@ bool listInsert(ListType &list, string theKey, int theValue)
 
 bool listRemove(ListType &list, string target)
 {
-   if (!list)
+   if (list == NULL)
    {
       return false;
    }
@@ -52,7 +52,7 @@ bool listRemove(ListType &list, string target)
       return true;
    }
    ListType p2 = list;
-   while (p)
+   while (p != NULL)
    {
       if (p->key == target)
       {
@@ -63,4 +63,59 @@ bool listRemove(ListType &list, string target)
       p2 = p;
       p = p->next;
    }
+}
+
+void listPrint(ListType &list)
+{
+   if (list == NULL)
+   {
+      cout << "<empty>" << endl;
+   }
+   ListType p = list;
+   while (p != NULL)
+   {
+      cout << p->key << " " << p->value << endl;
+      p = p->next;
+   }
+}
+
+void listClear(ListType &list)
+{
+   ListType rest = list;
+   while(list != NULL)
+   {
+      rest = list->next;
+      delete list;
+      list = rest;
+   }
+}
+
+int *listLookup(ListType &list, string target)
+{
+   if (list == NULL)
+   {
+      return NULL;
+   }
+   ListType p = list;
+   while (p != NULL)
+   {
+      if (p->key == target)
+      {
+         return &(p->value);
+      }
+      p = p->next;
+   }
+   return NULL;
+}
+
+int listLength(ListType list)
+{
+   ListType p = list;
+   int length = 0;
+   while (p != NULL)
+   {
+      length++;
+      p = p->next;
+   }
+   return length;
 }

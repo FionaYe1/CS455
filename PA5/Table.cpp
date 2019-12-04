@@ -28,39 +28,72 @@ using namespace std;
 
 
 Table::Table() {
-
+   hashTable = new ListType[HASH_SIZE]();
+   hashSize = HASH_SIZE;
 }
 
 
 Table::Table(unsigned int hSize) {
-
+   hashTable = new ListType[hSize]();
+   hashSize = hSize;
 }
 
 
 int * Table::lookup(const string &key) {
-   return NULL;   // dummy return value for stub
+
+   return listLookup(hashTable[hashCode(key)], key);   
 }
 
 bool Table::remove(const string &key) {
-   return false;  // dummy return value for stub
+   return listRemove(hashTable[hashCode(key)], key);   
 }
 
 bool Table::insert(const string &key, int value) {
-   return false;  // dummy return value for stub
+   if（this->lookup(key))
+   {
+      return false;
+   }
+   return listInsert(hashTable[hashCode(key)], key, value);   
 }
 
 int Table::numEntries() const {
-   return 0;      // dummy return value for stub
+   int num = 0;
+   for (int i = 0; i < hashSize; i++)
+   {
+      num += listLength(hashTable[i]);
+   }
+   return num;       
 }
 
 
 void Table::printAll() const {
-
+   for (int i = 0; i < hashSize; i++)
+   {
+      listPrint(hashTable[i]);
+   }
 }
 
+
+
 void Table::hashStats(ostream &out) const {
-  
+   cout << "number of buckets: " << hashSize;
+   cout << "number of entries: " << numEntries;
+   cout << "number of non-empty buckets: " << ;
+   cout << "longest chain: " << ;
 }
 
 
 // add definitions for your private methods here
+int Table::numBucket() const 
+{
+   int num = 0;
+   for (int i = 0; i < hashSize; i++)
+   {
+      if (hashTable[i] != NULL)
+      {
+         num++;
+      }
+   }
+   return num;
+}
+

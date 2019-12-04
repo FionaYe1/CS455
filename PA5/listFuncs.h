@@ -36,15 +36,17 @@ typedef Node * ListType;
 //that operate on a list here (i.e., each includes a parameter of type
 //ListType or ListType&).  No function definitions go in this file.
 
+bool listInsert(ListType &list, std::string theKey, int theValue);
 
+bool listRemove(ListType &list, std::string target);
 
+void listPrint(ListType &list);
 
+void listClear(ListType &list);
 
+int *listLookup(ListType &list, std::string target);
 
-
-
-
-
+int listLength(ListType list);
 
 
 
