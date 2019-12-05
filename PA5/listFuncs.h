@@ -38,23 +38,23 @@ typedef Node * ListType;
 
 // insert a new pair into the list
 // return false iff this key was already present(and no change made to list)
-bool listInsert(ListType &list, std::string theKey, int theValue);
+bool listInsert(ListType &list, const std::string &theKey, int theValue);
 
 // remove a pair given its key
 // false iff key wasn't present
-bool listRemove(ListType &list, std::string target);
+bool listRemove(ListType &list, const std::string &target);
 
+// print out all the entries in the list, one per line.
 void listPrint(ListType &list);
-
-void listClear(ListType &list);
 
 // returns the address of the value that goes with this key
 // or NULL if key is not present.
 //   Thus, this method can be used to either lookup the value or
 //   update the value that goes with this key.
-int *listLookup(ListType &list, std::string target);
+int *listLookup(ListType &list, const std::string &target);
 
-int listLength(ListType list);
+// number of entries in the list
+int listLength(ListType &list);
 
 
 

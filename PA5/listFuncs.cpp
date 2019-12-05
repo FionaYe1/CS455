@@ -29,15 +29,21 @@ Node::Node(const string &theKey, int theValue, Node *n) {
 //*************************************************************************
 // put the function definitions for your list functions below
 
-bool listInsert(ListType &list, string theKey, int theValue)
+// insert a new pair into the list
+// return false iff this key was already present(and no change made to list)
+bool listInsert(ListType &list, const string &theKey, int theValue)
 {
+   if (listLookup(list, theKey) != NULL)
+   {
+      return false;
+   }
    list = new Node(theKey, theValue, list);
    return true;
 }
 
-
-
-bool listRemove(ListType &list, string target)
+// remove a pair given its key
+// false iff key wasn't present
+bool listRemove(ListType &list, const string &target)
 {
    if (list == NULL)
    {
@@ -63,8 +69,10 @@ bool listRemove(ListType &list, string target)
       p2 = p;
       p = p->next;
    }
+   return false;
 }
 
+// print out all the entries in the list, one per line.
 void listPrint(ListType &list)
 {
    ListType p = list;
@@ -75,8 +83,11 @@ void listPrint(ListType &list)
    }
 }
 
-
-int *listLookup(ListType &list, string target)
+// returns the address of the value that goes with this key
+// or NULL if key is not present.
+//   Thus, this method can be used to either lookup the value or
+//   update the value that goes with this key.
+int *listLookup(ListType &list, const string &target)
 {
    if (list == NULL)
    {
@@ -94,7 +105,8 @@ int *listLookup(ListType &list, string target)
    return NULL;
 }
 
-int listLength(ListType list)
+// number of entries in the list
+int listLength(ListType &list)
 {
    ListType p = list;
    int length = 0;
