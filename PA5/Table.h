@@ -98,11 +98,11 @@ class Table {
    unsigned int hashSize;      // size of the hash table
    // (used in hashCode method above)
 
-  ListType *hashTable;
+  ListType *hashTable;        // declare the hashtable
 
-  int numBucket() const;
+  int numBucket() const;      // the number of the buckets in the table
 
-  int longestChain() const;
+  int longestChain() const;   // the length of the longest chain
 };
 
 #endif

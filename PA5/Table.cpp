@@ -38,24 +38,29 @@ Table::Table(unsigned int hSize) {
    hashSize = hSize;
 }
 
-
+// returns the address of the value that goes with this key
+// or NULL if key is not present.
+//   Thus, this method can be used to either lookup the value or
+//   update the value that goes with this key.
 int * Table::lookup(const string &key) {
 
    return listLookup(hashTable[hashCode(key)], key);   
 }
 
+// remove a pair given its key
+// false iff key wasn't present
 bool Table::remove(const string &key) {
    return listRemove(hashTable[hashCode(key)], key);   
 }
 
+// insert a new pair into the table
+// return false iff this key was already present
+//         (and no change made to table)
 bool Table::insert(const string &key, int value) {
-   if (this->lookup(key))
-   {
-      return false;
-   }
    return listInsert(hashTable[hashCode(key)], key, value);   
 }
 
+// number of entries in the table
 int Table::numEntries() const {
    int num = 0;
    for (int i = 0; i < hashSize; i++)
@@ -65,7 +70,11 @@ int Table::numEntries() const {
    return num;       
 }
 
-
+// print out all the entries in the table, one per line.
+// Sample output:
+//   zhou 283
+//   sam 84
+//   babs 99
 void Table::printAll() const {
    for (int i = 0; i < hashSize; i++)
    {
@@ -73,16 +82,20 @@ void Table::printAll() const {
    }
 }
 
-
+// hashStats: for diagnostic purposes only
+// prints out info to let us know if we're getting a good distribution
+// of values in the hash table.
 void Table::hashStats(ostream &out) const {
-   cout << "number of buckets: " << hashSize << endl;
-   cout << "number of entries: " << numEntries() << endl;
-   cout << "number of non-empty buckets: " << numBucket() << endl;
-   cout << "longest chain: " << longestChain() << endl;
+   out << "number of buckets: " << hashSize << endl;
+   out << "number of entries: " << numEntries() << endl;
+   out << "number of non-empty buckets: " << numBucket() << endl;
+   out << "longest chain: " << longestChain() << endl;
 }
 
 
 // add definitions for your private methods here
+
+// the number of the buckets in the table
 int Table::numBucket() const 
 {
    int num = 0;
@@ -96,21 +109,16 @@ int Table::numBucket() const
    return num;
 }
 
+// the length of the longest chain
 int Table::longestChain() const
 {
    int max = 0;
-   int num = 0;
    for (int i = 0; i < hashSize; i++)
    {
       if (max < listLength(hashTable[i])) 
       {
          max = listLength(hashTable[i]);
-         num = 1;
-      }
-      else if (max == listLength(hashTable[i]))
-      {
-         num++;
       }
    }
-   return num;
+   return max;
 }
