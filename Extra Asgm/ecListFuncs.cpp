@@ -1,14 +1,12 @@
-/*  Name:
- *  USC NetID:
+/*  Name: Shuna Ye
+ *  USC NetID: 2418710997
  *  CS 455 Fall 2019
  *
  *  See ecListFuncs.h for specification of each function.
  */
 
-
 // for NULL
 #include <cstdlib>
-
 // in case you want to use assert statements
 #include <cassert>
 
@@ -16,23 +14,24 @@
 
 using namespace std;
 
+#define INT16_MIN -32768
 
 void longestRun(ListType list, int & maxRunVal, int & maxRunLen) {
    ListType p = list;
-   ListType pDup = list;
-   maxRunVal = p->data;
-   maxRunLen = -1;
-   int tempLen;
+   ListType pDup = list;      // second pointer to indicate how many numbers are dulplicated
+   maxRunVal = p->data;    // assign the maxRunVal as the first data in the list
+   maxRunLen = -1;         // initial the maxRunLen
+   int tempLen;            // record the length if there is any duplicate numbers
    while (1)
    {
       tempLen = 0;
       pDup = p;
-      while (pDup != NULL &&p->data == pDup->data)
+      while (pDup != NULL && p->data == pDup->data)   // calculate the length
       {
          tempLen++;
          pDup = pDup->next;
       }
-      if (tempLen > maxRunLen)
+      if (tempLen > maxRunLen)   // compare the length with the maxRunLen so far
       {
          maxRunLen = tempLen;
          maxRunVal = p->data;
@@ -47,8 +46,7 @@ void longestRun(ListType list, int & maxRunVal, int & maxRunLen) {
 
 void removeMultiplesOf3(ListType & list) {
 
-   ListType newNode = new Node(INT16_MIN);   // create a dummy node
-   newNode->next = list;
+   ListType newNode = new Node(INT16_MIN, list);   // create a dummy node
    list = newNode;
    ListType p = list;
    ListType temp = list;
@@ -58,7 +56,7 @@ void removeMultiplesOf3(ListType & list) {
       if (p->data % 3 == 0)
       {
          temp->next = p->next;
-         delete p;
+         delete p;               // delete the node if it is the multiple of 3
          p = temp->next;
          continue;
       }
@@ -66,12 +64,12 @@ void removeMultiplesOf3(ListType & list) {
       p = p->next;
    }
    list = newNode->next;
-   delete newNode;
+   delete newNode;            // delete the dummy node
 }
 
 
 void insertMiddle(ListType & list, int midVal) {
-   ListType midNode = new Node(midVal);   
+   ListType midNode = new Node(midVal);      // create the node whose data is midVal
    if (list == NULL || list->next == NULL)
    {
       midNode->next = list;
@@ -105,13 +103,14 @@ ListType merge(ListType list1, ListType list2) {
    ListType p2 = list2;
    ListType temp = list2;
    ListType newGuy = new Node(INT16_MIN);    // create a dummy node
-   ListType resultList = newGuy;
+   ListType resultList = newGuy;             // store the result list at very last
 
-   while(p1 != NULL && p2 != NULL)
+   while(p1 != NULL && p2 != NULL)  
    {
-      if (p1->data > p2->data)
+      // compare the data of the first nodes in both lists
+      if (p1->data > p2->data)   
       {
-         newGuy->next = p2;
+         newGuy->next = p2;      // connect the minimun node
          newGuy = newGuy->next;
          p2 = p2->next;
       }
@@ -126,12 +125,13 @@ ListType merge(ListType list1, ListType list2) {
          newGuy->next = p1;
          newGuy = newGuy->next;
          p1 = p1->next;
-         temp = p2->next;
+         temp = p2->next;  // delete another node to prevent the memory leaks
          delete p2;
          p2 = temp;
       }
    }
-   if (p1 == NULL)
+   // if there is one list left, connect all of them to newGuy
+   if (p1 == NULL)      
    {
       newGuy->next = p2;
    }
@@ -139,7 +139,7 @@ ListType merge(ListType list1, ListType list2) {
    {
       newGuy->next = p1;
    }
-   resultList = resultList->next;
+   resultList = resultList->next;   // delete the dummy node
    return resultList;  // dummy code so starter code compiles
 }
 
