@@ -97,13 +97,40 @@ void insertMiddle(ListType & list, int midVal) {
    midNode->next = temp;
 }
 
-
 ListType merge(ListType list1, ListType list2) {
    ListType p1 = list1;
    ListType p2 = list2;
    ListType temp = list2;
-   ListType newGuy = new Node(INT16_MIN);    // create a dummy node
-   ListType resultList = newGuy;             // store the result list at very last
+   ListType newGuy = NULL;    // create a dummy node
+
+   if (p1 == NULL)
+   {
+      return p2;
+   }
+   if (p2 == NULL)
+   {
+      return p1;
+   }
+   // choose the minimum node as the first node
+   if (p1->data > p2->data)   
+   {
+      newGuy = p2;      // connect the minimun node
+      p2 = p2->next;
+   }
+   else if (p1->data < p2->data)
+   {
+      newGuy = p1;
+      p1 = p1->next;
+   }
+   else if (p1->data == p2->data)
+   {
+      newGuy = p1;
+      p1 = p1->next;
+      temp = p2->next;  // delete another node to prevent the memory leaks
+      delete p2;
+      p2 = temp;
+   }
+   ListType resultList = newGuy;     // record the first node
 
    while(p1 != NULL && p2 != NULL)  
    {
@@ -130,7 +157,7 @@ ListType merge(ListType list1, ListType list2) {
          p2 = temp;
       }
    }
-   // if there is one list left, connect all of them to newGuy
+   // If one of the lists are empty, connect another list to newGuy
    if (p1 == NULL)      
    {
       newGuy->next = p2;
@@ -139,7 +166,6 @@ ListType merge(ListType list1, ListType list2) {
    {
       newGuy->next = p1;
    }
-   resultList = resultList->next;   // delete the dummy node
    return resultList;  // dummy code so starter code compiles
 }
 
